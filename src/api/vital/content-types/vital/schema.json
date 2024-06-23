@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vitals",
+  "info": {
+    "singularName": "vital",
+    "pluralName": "vitals",
+    "displayName": "vital",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blood_pressure": {
+      "type": "string"
+    },
+    "heart_rate": {
+      "type": "string"
+    },
+    "temperature": {
+      "type": "string"
+    },
+    "respiratory_rate": {
+      "type": "string"
+    },
+    "oxygen_saturation": {
+      "type": "string"
+    },
+    "current_health_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::current-health-information.current-health-information",
+      "inversedBy": "vitals"
+    }
+  }
+}

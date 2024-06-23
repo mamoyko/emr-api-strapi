@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doctors",
+  "info": {
+    "singularName": "doctor",
+    "pluralName": "doctors",
+    "displayName": "doctor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "contact_information": {
+      "type": "json"
+    },
+    "specialist": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::specialist.specialist",
+      "inversedBy": "doctors"
+    },
+    "specialty": {
+      "type": "string"
+    },
+    "encounters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::encounter.encounter",
+      "mappedBy": "provider"
+    }
+  }
+}

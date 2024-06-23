@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "surgical_histories",
+  "info": {
+    "singularName": "surgical-history",
+    "pluralName": "surgical-histories",
+    "displayName": "surgical_history",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "procedure": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "surgeon": {
+      "type": "string"
+    },
+    "hospital": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "medical_history": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medical-history.medical-history",
+      "inversedBy": "surgical_histories"
+    }
+  }
+}

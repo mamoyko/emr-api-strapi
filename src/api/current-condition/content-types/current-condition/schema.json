@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "current_conditions",
+  "info": {
+    "singularName": "current-condition",
+    "pluralName": "current-conditions",
+    "displayName": "current_condition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "condition": {
+      "type": "string"
+    },
+    "diagnosed_date": {
+      "type": "datetime"
+    },
+    "treatment": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "current_health_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::current-health-information.current-health-information",
+      "inversedBy": "current_conditions"
+    }
+  }
+}

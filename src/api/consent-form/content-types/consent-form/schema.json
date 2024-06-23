@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consent_forms",
+  "info": {
+    "singularName": "consent-form",
+    "pluralName": "consent-forms",
+    "displayName": "consent_form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "form_type": {
+      "type": "string"
+    },
+    "date_signed": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "administrative_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::administrative-information.administrative-information",
+      "inversedBy": "consent_forms"
+    }
+  }
+}

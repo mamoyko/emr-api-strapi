@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "immunizations",
+  "info": {
+    "singularName": "immunization",
+    "pluralName": "immunizations",
+    "displayName": "immunization",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vaccine": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "lot_number": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "medical_history": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medical-history.medical-history",
+      "inversedBy": "immunizations"
+    }
+  }
+}

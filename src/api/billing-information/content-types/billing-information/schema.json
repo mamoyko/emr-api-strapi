@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "billing_informations",
+  "info": {
+    "singularName": "billing-information",
+    "pluralName": "billing-informations",
+    "displayName": "billing_information",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service_date": {
+      "type": "datetime"
+    },
+    "service_description": {
+      "type": "string"
+    },
+    "charges": {
+      "type": "biginteger"
+    },
+    "insurance_covered": {
+      "type": "biginteger"
+    },
+    "patient_responsibility": {
+      "type": "biginteger"
+    },
+    "payment_status": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "administrative_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::administrative-information.administrative-information",
+      "inversedBy": "billing_informations"
+    }
+  }
+}

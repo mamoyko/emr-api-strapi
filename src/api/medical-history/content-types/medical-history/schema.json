@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medical_histories",
+  "info": {
+    "singularName": "medical-history",
+    "pluralName": "medical-histories",
+    "displayName": "medical_history",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "patient": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::patient.patient"
+    },
+    "surgical_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::surgical-history.surgical-history",
+      "mappedBy": "medical_history"
+    },
+    "immunizations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::immunization.immunization",
+      "mappedBy": "medical_history"
+    },
+    "medications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medication.medication",
+      "mappedBy": "medical_history"
+    },
+    "family_medical_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::family-medical-history.family-medical-history",
+      "mappedBy": "medical_history"
+    },
+    "social_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social-history.social-history",
+      "mappedBy": "medical_history"
+    },
+    "past_medical_conditions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::past-medical-condition.past-medical-condition",
+      "mappedBy": "medical_history"
+    }
+  }
+}

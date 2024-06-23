@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "administrative_informations",
+  "info": {
+    "singularName": "administrative-information",
+    "pluralName": "administrative-informations",
+    "displayName": "administrative_information",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "admission_date": {
+      "type": "datetime"
+    },
+    "discharge_date": {
+      "type": "datetime"
+    },
+    "referring_physician": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::doctor.doctor"
+    },
+    "visit_type": {
+      "type": "string"
+    },
+    "appointment_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::appointment-history.appointment-history",
+      "mappedBy": "administrative_information"
+    },
+    "billing_informations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::billing-information.billing-information",
+      "mappedBy": "administrative_information"
+    },
+    "consent_forms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::consent-form.consent-form",
+      "mappedBy": "administrative_information"
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}

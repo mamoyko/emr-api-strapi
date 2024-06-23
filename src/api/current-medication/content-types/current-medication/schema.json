@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "current_medications",
+  "info": {
+    "singularName": "current-medication",
+    "pluralName": "current-medications",
+    "displayName": "current_medication",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "dose": {
+      "type": "string"
+    },
+    "frequency": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string"
+    },
+    "prescribing_doctor": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "current_health_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::current-health-information.current-health-information",
+      "inversedBy": "current_medications"
+    }
+  }
+}

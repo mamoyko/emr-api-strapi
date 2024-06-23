@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "primary_care_physicians",
+  "info": {
+    "singularName": "primary-care-physician",
+    "pluralName": "primary-care-physicians",
+    "displayName": "primary_care_physician"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "doctor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::doctor.doctor"
+    }
+  }
+}

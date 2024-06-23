@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "encounters",
+  "info": {
+    "singularName": "encounter",
+    "pluralName": "encounters",
+    "displayName": "encounter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime"
+    },
+    "provider": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::doctor.doctor",
+      "inversedBy": "encounters"
+    },
+    "reason": {
+      "type": "text"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "current_health_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::current-health-information.current-health-information",
+      "inversedBy": "encounters"
+    }
+  }
+}

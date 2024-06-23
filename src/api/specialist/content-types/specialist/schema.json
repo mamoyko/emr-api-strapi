@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "specialists",
+  "info": {
+    "singularName": "specialist",
+    "pluralName": "specialists",
+    "displayName": "specialist",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "doctors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::doctor.doctor",
+      "mappedBy": "specialist"
+    },
+    "current_health_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::current-health-information.current-health-information",
+      "inversedBy": "specialists"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appointment_histories",
+  "info": {
+    "singularName": "appointment-history",
+    "pluralName": "appointment-histories",
+    "displayName": "appointment_history"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "appointment_date": {
+      "type": "datetime"
+    },
+    "doctor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::doctor.doctor"
+    },
+    "reason": {
+      "type": "text"
+    },
+    "outcome": {
+      "type": "text"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "administrative_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::administrative-information.administrative-information",
+      "inversedBy": "appointment_histories"
+    }
+  }
+}

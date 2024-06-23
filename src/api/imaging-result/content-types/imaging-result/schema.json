@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "imaging_results",
+  "info": {
+    "singularName": "imaging-result",
+    "pluralName": "imaging-results",
+    "displayName": "imaging_result"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "test": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "result": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "current_health_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::current-health-information.current-health-information",
+      "inversedBy": "imaging_results"
+    }
+  }
+}

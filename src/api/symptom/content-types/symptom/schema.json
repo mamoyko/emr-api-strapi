@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "symptoms",
+  "info": {
+    "singularName": "symptom",
+    "pluralName": "symptoms",
+    "displayName": "symptom",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "symptom": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "current_health_information": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::current-health-information.current-health-information",
+      "inversedBy": "symptoms"
+    }
+  }
+}
